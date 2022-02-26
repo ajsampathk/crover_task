@@ -15,5 +15,11 @@ The following observations can be made initially with respect to the given data 
 
 - cannot visualize GNSS and wheel odom at the same time( Messages are too old error)
 
+## Approach:
+
+The problem requires combining two different odometry information to output a predicted position and orientation of the car. 
+This can be done mostly by a filter, a kalman-filter or an EKF is most likely to give the best estimates. However, this will take quite 
+a bit of research as it is not something that I am familar with at this moment. 
+ 
 
     
