@@ -2,8 +2,10 @@
 
 
 <param name="/use_sim_time" value="true" />
-<node type="rviz" name="rviz" pkg="rviz" args="-d $(find crover_task)/launch/config_file.rviz" />
+<node pkg="crover_task" type="robot_pose.py" name="Pose_estimator"/>
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find crover_task)/launch/config_file.rviz"/>
 <node pkg="rosbag" type="play" name="player" args="--clock /home/aj/data.bag"/>
+<node pkg="crover_task" type="pose_to_odom.py" name="pose_to_odom"/>
 <node pkg="tf" type="static_transform_publisher" name="odom_broadcaster" args="1 0 0 0 0 0 1 map odom 100" />
 <!-- <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
      <remap from="odom" to="/sensors/odom"/>

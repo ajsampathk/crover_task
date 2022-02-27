@@ -94,7 +94,6 @@ class KFpose:
 
 
     def gnss_callback(self,msg):
-        rospy.loginfo(np.array([self.state_estimate_k[2]]))
         self.z_k_observation_vector = np.array([[msg.pose.pose.position.x],[msg.pose.pose.position.y],[self.state_estimate_k[2]]])
         self.update=True
 
